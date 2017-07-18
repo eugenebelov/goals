@@ -1,3 +1,8 @@
 <h3>Goals app</h3>
 
-{{persone-list persone=model.persones save=(action 'save')}}
+{{persone-list persone=model.persones
+              goals=model.goals
+              save=(action 'save')}}
+
+{{goals-list goals=model.goals
+              addGoal=(action 'addGoal')}}

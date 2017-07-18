@@ -1,1 +1,23 @@
-{{yield}}
+<h4>Goals list</h4>
+
+<div class="addGoal">
+  <div>
+    <label for="goalTitle">Title *: </label>
+    {{input type="text" name="goalTitle" value=goalTitle}}
+  </div>
+
+  <div>
+    <label for="goalScore">Score: </label>
+    {{input type="text" name="goalScore" value=goalScore}}
+  </div>
+
+  <input type="button" value="+" {{action "onAddGoal"}}>
+</div>
+
+<ul class="goalsList">
+  {{#each model as |goal|}}
+    <li>Goal {{goal}}</li>
+  {{else}}
+    Sorry, goals is here.
+  {{/each}}
+</ul>

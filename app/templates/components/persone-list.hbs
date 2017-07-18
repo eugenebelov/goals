@@ -1,1 +1,25 @@
-{{yield}}
+<h4>Persones</h4>
+
+<div class="addPersone">
+  <div>
+    <label for="personeFirstName">First name *: </label>
+    {{input type="text" name="personeFirstName" value=personeFirstName}}
+  </div>
+
+  <div>
+    <label for="personeLastName">Last name *: </label>
+    {{input type="text" name="personeLastName" value=personeLastName}}
+  </div>
+
+  <!-- Goals list here -->
+
+  <input type="button" value="+" {{action "onAddPersone"}}>
+</div>
+
+<ul class="personeList">
+  {{#each persone as |persone|}}
+    <li>{{persone.firstName}} : {{persone.lastName}} : {{persone.goal}}</li>
+  {{else}}
+    Sorry, persones here.
+  {{/each}}
+</ul>

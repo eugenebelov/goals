@@ -4,11 +4,17 @@
   <div>
     <label for="personeFirstName">First name *: </label>
     {{input type="text" name="personeFirstName" value=personeFirstName}}
+    {{#if errors.personeFirstName }}
+        <div class="help-block">{{errors.personeFirstName}}</div>
+    {{/if}}
   </div>
 
   <div>
     <label for="personeLastName">Last name *: </label>
     {{input type="text" name="personeLastName" value=personeLastName}}
+    {{#if errors.personeLastName }}
+        <div class="help-block">{{errors.personeLastName}}</div>
+    {{/if}}
   </div>
 
   <!-- Goals list here -->
@@ -23,6 +29,13 @@
       </select>
       <input type="button" value="add goal" {{action "onAddGoalToPersone"}}>
     </div>
+    <ul>
+      {{#each persone.goals as |goal|}}
+        <li>Goal {{goal.title}} {{goal.score}}</li>
+      {{else}}
+        Sorry, goals is here.
+      {{/each}}
+    </ul>
   {{/if}}
 
   <input type="button" value="+" {{action "onAddPersone"}}>

@@ -2,6 +2,11 @@
   display: flex;
 }
 
+.help-block {
+  font-size: 14px;
+  color: red;
+}
+
 .goals-list-component,
 .persone-list-component {
   border: 1px solid;

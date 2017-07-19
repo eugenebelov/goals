@@ -4,6 +4,9 @@
   <div>
     <label for="goalTitle">Title *: </label>
     {{input type="text" name="goalTitle" value=goalTitle}}
+    {{#if errors.goalTitle }}
+        <div class="help-block">{{errors.goalTitle}}</div>
+    {{/if}}
   </div>
 
   <div>

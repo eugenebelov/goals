@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  actions: {
 
+  actions: {
     save(data) {
       let person = this.get('store').createRecord('persone', data);
       person.save();

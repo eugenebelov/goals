@@ -3,12 +3,14 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   actions: {
-    save(data) {
+    // Trigger save action from persone
+    savePersone(data) {
       let person = this.get('store').createRecord('persone', data);
       person.save();
     },
 
-    addGoal(data) {
+    // Trigger saving action from goal
+    saveGoal(data) {
       let goal = this.get('store').createRecord('goal', data);
       goal.save()
     }

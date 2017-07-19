@@ -2,21 +2,31 @@
 
 <div class="addGoal">
   <div>
+    <!-- Goal title -->
     <label for="goalTitle">Title *: </label>
     {{input type="text" name="goalTitle" value=goalTitle}}
+
+    <!-- Goal validation error -->
     {{#if errors.goalTitle }}
         <div class="help-block">{{errors.goalTitle}}</div>
     {{/if}}
   </div>
 
   <div>
+    <!-- Goal score -->
     <label for="goalScore">Score: </label>
-    {{input type="text" name="goalScore" value=goalScore}}
+    {{input type="number" name="goalScore" value=goalScore}}
+
+    <!-- Goal score validation error -->
+    {{#if errors.goalScore }}
+        <div class="help-block">{{errors.goalScore}}</div>
+    {{/if}}
   </div>
 
   <input type="button" value="+" {{action "onAddGoal"}}>
 </div>
 
+<!-- Goals list -->
 <ul class="goalsList">
   {{#each goals as |goal|}}
     <li>Goal {{goal.title}} {{goal.score}}</li>

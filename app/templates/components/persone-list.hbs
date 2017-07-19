@@ -1,17 +1,23 @@
 <h4>Persones</h4>
 
 <div class="addPersone">
+  <!-- First Name -->
   <div>
     <label for="personeFirstName">First name *: </label>
     {{input type="text" name="personeFirstName" value=personeFirstName}}
+
+    <!-- First Name error message -->
     {{#if errors.personeFirstName }}
         <div class="help-block">{{errors.personeFirstName}}</div>
     {{/if}}
   </div>
 
   <div>
+    <!-- Last name -->
     <label for="personeLastName">Last name *: </label>
     {{input type="text" name="personeLastName" value=personeLastName}}
+
+    <!-- Last Name error message -->
     {{#if errors.personeLastName }}
         <div class="help-block">{{errors.personeLastName}}</div>
     {{/if}}
@@ -29,21 +35,27 @@
       </select>
       <input type="button" value="add goal" {{action "onAddGoalToPersone"}}>
     </div>
-    <ul>
+    <!-- <ul>
       {{#each persone.goals as |goal|}}
         <li>Goal {{goal.title}} {{goal.score}}</li>
       {{else}}
         Sorry, goals is here.
       {{/each}}
-    </ul>
+    </ul> -->
   {{/if}}
 
   <input type="button" value="+" {{action "onAddPersone"}}>
 </div>
 
+<!-- List of persons that were created -->
 <ul class="personeList">
   {{#each persone as |persone|}}
-    <li>{{persone.firstName}} : {{persone.lastName}} : {{persone.goal}}</li>
+    <li>{{persone.firstName}} : {{persone.lastName}} :
+
+      {{#each persone.goals as |pgoals|}}
+        {{pgoals.title}}
+      {{/each}}
+    </li>
   {{else}}
     Sorry, persones here.
   {{/each}}

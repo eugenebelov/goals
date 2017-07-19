@@ -28,7 +28,9 @@ export default function() {
   this.post('/goals', (schema, request) => {
     return schema.goals.create();
   })
-  this.post('/persones')
+  this.post('/persones', (schema, request) => {
+    return schema.persones.create();
+  })
 
   // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
   // this.namespace = '';    // make this `/api`, for example, if your API is namespaced

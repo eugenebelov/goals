@@ -14,7 +14,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:eugenebelov/goals.git` this repository
 * `cd goals`
 * `npm install`
 

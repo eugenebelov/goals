@@ -25,7 +25,9 @@ export default function() {
         }]
   });
 
-  this.post('/goals')
+  this.post('/goals', (schema, request) => {
+    return schema.goals.create();
+  })
   this.post('/persones')
 
   // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server

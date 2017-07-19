@@ -15,9 +15,10 @@
   {{#if goals}}
     <div>
       <label for="personeLastName">Goals: </label>
-      <select>
+      <select {{action 'change' on='change'}}>
         {{#each goals as |item|}}
-          <option value={{item.id}}>{{item.title}}</option>
+          <option value={{item.id}}
+                  selected={{selection}}>{{item.title}}</option>
         {{/each}}
       </select>
       <input type="button" value="add goal" {{action "onAddGoalToPersone"}}>

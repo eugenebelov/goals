@@ -15,8 +15,8 @@
 </div>
 
 <ul class="goalsList">
-  {{#each model as |goal|}}
-    <li>Goal {{goal}}</li>
+  {{#each goals as |goal|}}
+    <li>Goal {{goal.title}} {{goal.score}}</li>
   {{else}}
     Sorry, goals is here.
   {{/each}}
